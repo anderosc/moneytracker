@@ -1,0 +1,46 @@
+.page{
+    display: flex;
+    flex-direction: column;
+    margin: 4%;
+    align-items: center;
+}
+.title{
+    font-size: 25px;
+    font-weight: 600;
+    align-items: center;
+
+}
+.addincome{
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    gap: 10px;
+}
+.history{
+    margin-top: 7%;
+}
+
+    .table table {
+        padding: 16px;
+      }
+    
+      
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #d1d5db;
+      }
+      
+      .table thead {
+        background-color: #262626;
+      }
+      
+      .table th, .table td {
+        border: 1px solid #053681;
+        padding: 8px 16px;
+        text-align: left;
+      }
+      
+      .table tr:nth-child(even) {
+        background-color: #517e46;
+      }

@@ -1,7 +1,6 @@
 .page{
     width: 92%;
     margin: 5% 4% 4% 4%;
-    border: 1px solid rebeccapurple;
     align-items: center;
 }
 .first{
@@ -17,10 +16,8 @@
     justify-content: space-around;
 }
 .firstleft{
-    border: 1px solid red;
     width: 600px;
-    font-size: 65px;
-    
+    font-size: 55px;
     font-weight: 800;
 }
 .firstleftinside{
@@ -29,12 +26,18 @@
     font-size: 40px;
     color: rgb(215, 215, 8);
 }
+.firstleftinsidebutton{
+    font-size: 20px;
+    background-color: rgb(225, 240, 17);
+    color: black;
+    border-radius: 15px;
+    padding: 2%;
+}
 .firstright{
     padding-top: 5%;
     width: 800px;
     max-width: 100%;
     overflow: hidden;
-    border: 1px solid red;
 }
 
 .person{
@@ -56,7 +59,7 @@
     right: 0;
     bottom: 0;
     background-color: #ffffff;
-    opacity: 0.3; /* Ainult taust muutub läbipaistvaks */
+    opacity: 0.3; 
     background-image: linear-gradient(135deg, rgb(38, 45, 51) 25%, transparent 25%), 
                       linear-gradient(225deg, rgb(38, 45, 51)5%, transparent 25%), 
                       linear-gradient(45deg, rgb(38, 45, 51) 25%, transparent 25%), 
@@ -64,6 +67,91 @@
     background-position: 5px 0, 5px 0, 0 0, 0 0;
     background-size: 5px 5px;
     background-repeat: repeat;
-    z-index: -1; /* Taust asub teksti taga */
-    border-radius: 5px; /* Valikuline - ümarad nurgad */
+    z-index: -1; 
+    border-radius: 5px; 
+}
+
+
+
+
+.second{
+    margin-top: 5%;
+}
+
+.wrapper{
+    width: 90%;
+    max-width: 1596px;
+    margin-inline: auto;
+    position: relative;
+    height: 300px;
+    margin-top: 5rem;
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        rgba(0,0,0,0),
+        rgba(0,0,0,1) 20%,
+        rgba(0,0,0,1) 80%,
+        rgba(0,0,0,0)
+    );
+}
+
+.item{
+    width: 240px;
+    height: 300px;
+    background-color: white;
+    color: black;
+    border-radius: 6px;
+    position: absolute;
+    left: 100%;
+    animation:  scrollLeft;
+    animation-duration: 80s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@keyframes scrollLeft{
+    to{
+        left: -200px;
+    }
+}
+
+.item1{
+animation-delay: 60s;}
+.item2{
+    animation-delay: -80s;}
+
+.item3{
+    animation-delay: -60s;}
+
+.item4{
+    animation-delay: -40s;}
+
+.item5{
+    animation-delay: -20s;}
+
+.item6{
+    animation-delay: 0s;}
+
+.item7{
+    animation-delay: 20s;}
+
+.item8{
+    animation-delay: 40s;}
+
+.name{
+    margin-top: 5%;
+    font-weight: 700;
+    font-size: 22px;
+}
+.userexperience{
+    margin: 5%;
+    font-weight: 400;
+    font-size: 17px;
+}
+
+
+.third{
+    margin-top: 5%;
 }

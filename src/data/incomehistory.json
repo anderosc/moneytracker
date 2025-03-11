@@ -1,0 +1,81 @@
+[
+    {
+        "income": 1400,
+        "category": "Salary",
+        "date": "2024-03-01",
+        "comment": "February salary payment"
+    },
+  {
+      "income": 1400,
+      "category": "Salary",
+      "date": "2024-04-01",
+      "comment": "February salary payment"
+  },
+  {
+      "income": 300,
+      "category": "Salary",
+      "date": "2024-05-15",
+      "comment": "Freelance project payment"
+  },
+  {
+      "income": 300,
+      "category": "Salary",
+      "date": "2024-06-01",
+      "comment": "March salary payment"
+  },
+  {
+      "income": 1400,
+      "category": "Salary",
+      "date": "2024-07-12",
+      "comment": "Freelance work"
+  },
+  {
+      "income": 1400,
+      "category": "Salary",
+      "date": "2024-08-01",
+      "comment": "Investment income"
+  },
+  {
+      "income": 1400,
+      "category": "Salary",
+      "date": "2024-09-05",
+      "comment": "April salary payment"
+  },
+  {
+      "income": 2400,
+      "category": "Salary",
+      "date": "2024-10-01",
+      "comment": "Freelance work"
+  },
+  {
+      "income": 2405,
+      "category": "Salary",
+      "date": "2024-11-10",
+      "comment": "May salary payment"
+  },
+  {
+      "income": 2400,
+      "category": "Salary",
+      "date": "2024-12-01",
+      "comment": "Freelance project"
+  },
+  {
+      "income": 1400,
+      "category": "Salary",
+      "date": "2025-01-10",
+      "comment": "June salary payment"
+  },
+  {
+      "income": 2400,
+      "category": "Salary",
+      "date": "2025-02-15",
+      "comment": "Investment profit"
+  },
+  {
+      "income": 1400,
+      "category": "Salary",
+      "date": "2025-03-02",
+      "comment": "Freelance job"
+  }
+]
+  

@@ -12,6 +12,8 @@
 .first{
     float: left;
     width: 100%;
+    align-items: center;
+    justify-content: center;
 }
 .second{
     gap: 10px;
@@ -35,14 +37,14 @@
     transform: translateY(-4px);
 }
 .login{
-    font-size: 25px;
+    font-size: 20px;
     background-color: white;
     color: black;
     border-radius: 15px;
     padding: 2%;
 }
 .signup{
-    font-size: 25px;
+    font-size: 20px;
     background-color: rgb(225, 240, 17);
     color: black;
     border-radius: 15px;
@@ -50,6 +52,9 @@
 }
 .login:hover, .signup:hover{
     transform: translateY(-4px);
+}
+.img{
+    height: 40px;
 }
 
 @media (max-width: 600px) {

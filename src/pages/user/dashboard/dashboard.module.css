@@ -1,0 +1,36 @@
+.container {
+    margin: 2%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px; 
+    width: 100%; 
+}
+.chart{
+    margin: 2%;
+
+}
+
+.table table {
+    padding: 16px;
+  }
+      
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #d1d5db;
+  }
+  
+  .table thead {
+    background-color: #262626;
+  }
+  
+  .table th, .table td {
+    border: 1px solid #053681;
+    padding: 8px 16px;
+    text-align: left;
+  }
+  
+  .table tr:nth-child(even) {
+    background-color: #517e46;
+  }
+  

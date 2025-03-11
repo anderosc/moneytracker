@@ -1,0 +1,31 @@
+.page{
+    margin: 2%;
+}
+.input{
+    height: 20px;
+    font-size: 17px;
+}
+
+.table table {
+    padding: 16px;
+  }
+      
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #d1d5db;
+  }
+  
+  .table thead {
+    background-color: #c2b4b4;
+  }
+  
+  .table th, .table td {
+    border: 1px solid #053681;
+    padding: 8px 16px;
+    text-align: left;
+  }
+  
+  .table tr:nth-child(even) {
+    background-color: #84977f;
+  }

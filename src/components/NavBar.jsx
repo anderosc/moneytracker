@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from "./navbar.module.css"
 import {Link, useNavigate } from "react-router-dom";
 
@@ -6,9 +5,12 @@ import {Link, useNavigate } from "react-router-dom";
 function NavBar() {
     const navigate = useNavigate()
     
+    
   return (
     <div className={styles.top}>
-        <div className={styles.first}> CashNOW </div>
+        <div className={styles.first}> 
+          <img src="/dashboard/salary.png" className={styles.img}  alt="" />
+          MyCash </div>
         <div className={styles.second}>
             <div onClick={() => navigate("/")} n className={styles.button}> Home</div>
             <div onClick={() => navigate("/features")} className={styles.button}> Features</div>
