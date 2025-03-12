@@ -14,6 +14,7 @@ import LayOut from "./pages/user/overview/layout";
 import Budget from "./pages/user/budget/Budget";
 import Customize from "./pages/user/customize/Customize";
 import Faq from "./pages/faq/Faq";
+import Contact from "./pages/contact/Contact";
 
 
 function App() {
@@ -37,6 +38,8 @@ function App() {
       <Route path="/budget" element={<Budget />} />
       <Route path="customize" element={<Customize />} />
       <Route path="/faq" element={<Faq />} />
+      <Route path="/contact" element={<Contact />} />
+
 
 
 

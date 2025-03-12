@@ -1,7 +1,9 @@
 import { useContext, useState } from "react";
 import styles from "./login.module.css"; 
-import { AuthContext, AuthContextProvider } from "../context/AuthContext";
-import { Navigate, useNavigate } from "react-router-dom";
+import { AuthContext} from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+
+
 
 function LogIn() {
     const [email, setEmail] = useState("");
@@ -13,6 +15,7 @@ function LogIn() {
         setLoggedIn(true)
         navigate("/overview")
       }
+
 
 
     return (
@@ -38,6 +41,7 @@ function LogIn() {
             <button onClick={() => login()} className={styles.button} >
                 Log In 
             </button>
+
         </div>
     );
 }

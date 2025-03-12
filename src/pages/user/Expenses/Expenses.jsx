@@ -1,20 +1,26 @@
-import React, { useContext, useRef } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import styles from "./expenses.module.css"
-import categoriesDATA from "../../../data/expensesCategories.json"
 import BasicDatePicker from '../../../components/BasicDatePicker/BasicDatePicker'
 import { FinanceContext } from '../../../context/FinanceContext'
 import { ToastContainer, toast } from 'react-toastify';
+import { Stack, Pagination } from '@mui/material';
+import { CustomizeContext } from '../../../context/CustomizeContext'
+
 
 
 function Expenses() {
     const { expenses,  addExpense } = useContext(FinanceContext);
 
-    const categories =  categoriesDATA
+    const {expenseCategory} =  useContext(CustomizeContext)
     const amountRef = useRef();
     const categoryRef = useRef();
     const commentRef = useRef()
     // const dateRef = useRef()
     // const [date, setDate] = useState()
+
+    const [selectedDate, setSelectedDate] = useState(null);
+    const [currentPage, setCurrentPage] = useState(1); 
+    const rowsPerPage = 10; 
 
     const addNewExpense = () => {
          if (!amountRef.current.value || !categoryRef.current.value || !selectedDate) {
@@ -37,11 +43,20 @@ function Expenses() {
         toast.success("New Income added");
     }
 
-    const [selectedDate, setSelectedDate] = React.useState(null);
 
-  const handleDateChange = (date) => {
-    setSelectedDate(date); 
-  };
+    const handleDateChange = (date) => {
+        setSelectedDate(date); 
+    };
+
+
+    const sortedIncomes = expenses.slice().sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    const totalPages = Math.ceil(sortedIncomes.length / rowsPerPage);
+    const paginatedExpenses = sortedIncomes.slice((currentPage - 1) * rowsPerPage, currentPage * rowsPerPage);
+
+    const handlePageChange = (event, value) => {
+        setCurrentPage(value);
+    };
     
 
   return (
@@ -50,7 +65,7 @@ function Expenses() {
             <div className={styles.title}>Add New Expense</div>
                 <input  ref={amountRef} type="number" placeholder='Amount' />
                 <select ref={categoryRef}  name="" id="">
-                    {categories.map((cat) =>
+                    {expenseCategory.map((cat) =>
                         <option key={cat}>{cat}</option>
                     )}
                 </select>
@@ -70,7 +85,7 @@ function Expenses() {
                     </tr>
                 </thead>
                 <tbody>
-                    {expenses.map((item, index) =>
+                    {paginatedExpenses.map((item, index) =>
                         <tr key={item.date + index}>
                             <td>{item.date}</td>
                             <td>{item.amount}</td>
@@ -81,6 +96,15 @@ function Expenses() {
                 </tbody>
             </table>
         </div>
+        <Stack spacing={2}>
+                <Pagination 
+                    count={totalPages} 
+                    variant="outlined" 
+                    page={currentPage} 
+                    onChange={handlePageChange} 
+                />
+            </Stack>
+
         <ToastContainer 
                     position="top-left"
                     autoClose={4000}

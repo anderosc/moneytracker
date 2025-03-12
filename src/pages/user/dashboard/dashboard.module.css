@@ -33,4 +33,10 @@
   .table tr:nth-child(even) {
     background-color: #517e46;
   }
-  
+
+.budget{
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: 600;
+}

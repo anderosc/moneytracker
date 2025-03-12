@@ -13,7 +13,6 @@ function NavBar() {
           MyCash </div>
         <div className={styles.second}>
             <div onClick={() => navigate("/")} n className={styles.button}> Home</div>
-            <div onClick={() => navigate("/features")} className={styles.button}> Features</div>
             <div onClick={() => navigate("/faq")} className={styles.button}> FAQ </div>
             <div onClick={() => navigate("/contact")} className={styles.button}> Contact </div>
         </div>

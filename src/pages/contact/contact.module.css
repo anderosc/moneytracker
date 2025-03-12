@@ -1,0 +1,55 @@
+.contactPage {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .pageTitle {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+  }
+  
+  .pageDescription {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #777;
+  }
+  
+  .contactForm {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formLabel {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .formInput,
+  .formTextArea {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .formTextArea {
+    height: 150px;
+    resize: none;
+  }
+  
+  .submitButton {
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submitButton:hover {
+    background-color: #45a049;
+  }
+  

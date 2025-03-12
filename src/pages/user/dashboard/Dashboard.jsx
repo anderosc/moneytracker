@@ -15,7 +15,7 @@ import { CustomizeContext } from '../../../context/CustomizeContext';
 
 
 function Dashboard() {
-  const { incomes,  expenses, budget, totalBudget  } = useContext(FinanceContext);
+  const {incomes, expenses, budget  } = useContext(FinanceContext);
   const { expenseCategory } = useContext(CustomizeContext);
  
 
@@ -27,8 +27,9 @@ function Dashboard() {
   const currentMonthExpenses = getCuttentMonthExpenses() 
   const savingrate = savingRate()
   const dailyaverageexpenses = dailyAverageExpenses()
-  const data = prev12monthsData()
+  const prev12monthsdata = prev12monthsData()
   const currentMonthCatExpenses = getCurrentMonthCategoryExpenses()
+
 
   
   const chartSetting = {
@@ -109,21 +110,27 @@ function Dashboard() {
               </CardContent>
               </Card>    
           </div>
+
       </div>
       <div className={styles.chart}>
-      <div>Previous 12 months income and expenses</div>
+        <br />
+        <br /><br />
+      <div className={styles.budget}>Previous 12 months income and expenses</div>
 
       <BarChart
-      dataset={data}
+      dataset={prev12monthsdata}
       xAxis={[{ scaleType: 'band', dataKey: 'month' }]}
       series={[
         { dataKey: 'income', label: 'Income',  },
         { dataKey: 'expenses', label: 'Expenses',  },
       ]}
       {...chartSetting}/>
-    
+
+      <br />
+      <br />
       </div>
       <div>
+        <div className={styles.budget}>Budget</div> <br />
       <table className={styles.table}>
                 <thead>
                     <tr >
@@ -150,6 +157,18 @@ function Dashboard() {
                     })}
                 </tbody>
             </table>
+      </div>
+      <br />
+      <br />
+      <div>
+        <div className={styles.budget}>Previous 12 months savings</div>
+        <BarChart
+        dataset={prev12monthsdata}
+        xAxis={[{ scaleType: 'band', dataKey: 'month' }]}
+        series={[
+          { dataKey: 'savings', label: 'Savings',  },
+        ]}
+        {...chartSetting}/>
       </div>
     </div>
   )

@@ -4,6 +4,9 @@ import { useContext, useState } from "react";
 import { FinanceContext } from "../../../context/FinanceContext";
 import { CustomizeContext } from '../../../context/CustomizeContext';
 
+import { ToastContainer, toast } from 'react-toastify';
+
+
 
 function Budget() {
     const { budget, setCategoryBudget, totalBudget, setTotalBudget } = useContext(FinanceContext);
@@ -18,10 +21,10 @@ function Budget() {
     // Funktsioon salvestamiseks
     const handleSave = () => {
         if (totalExpenses > totalBudget) {
-            setError("Total expenses exceed the budget! Please adjust your amounts.");
+            toast.error("Total expenses exceed the budget! Please adjust your amounts.");
         } else {
             setError(""); // Eemaldab vea, kui kõik on korras
-            alert("Budget saved successfully!");
+            toast.success("Budget saved successfully!");
         }
     };
 
@@ -75,14 +78,20 @@ function Budget() {
 
             <div>
                 <h3>Total Expenses: €{totalExpenses.toFixed(2)}</h3>
-                <h3 className={savings >= 0 ? "text-green-600" : "text-red-600"}>
+                <h3 > 
                     Savings: €{savings.toFixed(2)}
                 </h3>
             </div>
 
-            {error && <p className="text-red-600">{error}</p>}
+            {error && <p >{error}</p>}
 
-            <button onClick={handleSave} className="mt-4 p-2 bg-blue-500 text-white rounded">Save Budget</button>
+            <button onClick={handleSave} >Save Budget</button>
+            <ToastContainer 
+                    position="top-left"
+                    autoClose={4000}
+                    theme="dark"
+                    closeOnClick
+                    />
         </div>
     );
 }

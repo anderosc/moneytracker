@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 import incomeHistory from "../data/incomehistory.json"
 import expensesHistory from "../data/expensesHistory.json"
+import { CustomizeContext } from "./CustomizeContext";
 
 
 export const FinanceContext = createContext();
@@ -12,25 +13,49 @@ export const FinanceProvider = ({ children }) => {
     const [budget, setBudget] = useState({});
     const [totalBudget, setTotalBudget] = useState(0);
 
+
+
     
     const addIncome = (newIncome) => {
-        setIncomes([...incomes, newIncome]);
+        setIncomes([newIncome, ...incomes]);
     };
 
     const addExpense = (newExpense) => {
-        setExpenses([...expenses, newExpense]);
+        setExpenses([newExpense, ...expenses]);
     };
 
     const setCategoryBudget = (category, amount) => {
         setBudget({ ...budget, [category]: amount });
     };
 
-    // Arvuta saldo (vaba raha)
-    const getBalance = () => {
-        const totalIncome = incomes.reduce((sum, item) => sum + item.income, 0);
-        const totalExpenses = expenses.reduce((sum, item) => sum + item.amount, 0);
-        return totalIncome - totalExpenses;
+
+
+    const updateExpenseCategoryData = (oldCategory, newCategory) => {
+        const updatedExpenses = expenses.map((expense) => {
+            if (expense.category === oldCategory) {
+                return {...expense, 
+                    category: newCategory, 
+                };
+            }
+            return expense; // HAS TO BE HERE!
+        });
+    
+        setExpenses(updatedExpenses);
     };
+
+    const updateIncomeCategoryData = (oldCategory, newCategory) => {
+        const updatedIncomes = incomes.map((income) => {
+            if (income.category === oldCategory) {
+                return {...income, 
+                    category: newCategory, 
+                };
+            }
+            return income;
+        });
+    
+        setIncomes(updatedIncomes);
+    };
+    
 
     return (
         <FinanceContext.Provider value={{ 
@@ -40,11 +65,12 @@ export const FinanceProvider = ({ children }) => {
             setExpenses, 
             addIncome, 
             addExpense, 
-            getBalance, 
             setCategoryBudget,
             budget,
             totalBudget,
-            setTotalBudget }}>
+            setTotalBudget,
+            updateExpenseCategoryData,
+            updateIncomeCategoryData }}>
             {children}
         </FinanceContext.Provider>
     );

@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { FinanceContext } from "../../../context/FinanceContext";
+import { CustomizeContext } from "../../../context/CustomizeContext";
 
 
 
@@ -69,18 +70,18 @@ export function savingRate(){
 
 
 
-export function dailyAverageExpenses(){
-  const expenses =  getCuttentMonthExpenses();
+export function dailyAverageExpenses() {
+  const expenses = getCuttentMonthExpenses();  // See tagastab kogu kulu numbrina
   const currentDate = new Date();
-  const currentMonth = currentDate.getMonth(); 
-  const currentYear = currentDate.getFullYear();
 
-  const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
 
-  const dailyAverage = (expenses / daysInMonth).toFixed(2);
+  const currentDay = currentDate.getDate();
 
+  const dailyAverage = (expenses / currentDay).toFixed(2);
+  
   return dailyAverage;
 }
+
 
 
 
@@ -98,7 +99,13 @@ export function prev12monthsData() {
   const currentMonthIndex = currentDate.getMonth();
   const currentYear = currentDate.getFullYear();
 
-  const data = [];
+  const data:{
+    month: string,
+    income : number,
+    expenses : number,
+    savings : number
+
+  }[] = [];
 
   // Every Month incomes and expenses
   for (let i = 0; i < 12; i++) {
@@ -120,12 +127,14 @@ export function prev12monthsData() {
     // Sum income and expenses
     const totalIncome = monthlyIncomes.reduce((sum, income) => sum + income.income, 0);
     const totalExpenses = monthlyExpenses.reduce((sum, expense) => sum + expense.amount, 0);
+    const totalSavings = totalIncome - totalExpenses
 
     // make table
     data.push({
       month: monthName,
       income: totalIncome,
-      expenses: totalExpenses
+      expenses: totalExpenses,
+      savings: totalSavings
     });
   }
 

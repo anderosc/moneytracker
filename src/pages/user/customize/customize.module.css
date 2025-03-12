@@ -29,3 +29,12 @@
   .table tr:nth-child(even) {
     background-color: #84977f;
   }
+
+  .modal-dialog {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 1050 !important; /* Tagab, et modal on kõige peal */
+}
+

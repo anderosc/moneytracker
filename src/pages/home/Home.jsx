@@ -62,7 +62,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className={styles.third}>helll </div>
+        <div className={styles.third}> </div>
     </div>
   )
 }
