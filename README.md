@@ -1,8 +1,9 @@
 
-# Finance Tracker
+# MoneyTracker
 
-**Finance Tracker** is a web application that allows users to manage their income and expenses, add and delete categories, and visualize data in graphical form. The app provides an easy-to-use interface for tracking financial activities over time.
+**MoneyTracker** is a web application that allows users to manage their income and expenses, add and delete categories, and visualize data in graphical form. The app provides an easy-to-use interface for tracking financial activities over time.
 
+LIVE DEMO --> <a href="https://moneytracker-7d066.web.app/" target="_blank">Link to demo webpage</a>
 ## Features
 
 - **Login**: Users can log in to their account and start managing their financial data.
