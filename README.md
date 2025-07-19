@@ -23,7 +23,7 @@ To run this application locally, follow the steps below:
    
 2. Navigate to the project directory:
    ```bash
-   cd finance-tracker
+   cd moneytracker
    ```
 
 3. Install dependencies:
@@ -33,7 +33,7 @@ To run this application locally, follow the steps below:
 
 4. Start the development server:
    ```bash
-   npm start
+   npm run dev
    ```
 
 5. Open the application in your browser at your localhost.
@@ -44,7 +44,7 @@ To run this application locally, follow the steps below:
 - Users must first log in to access their finance dashboard. Just klick LOG IN
 
 ### View Income and Expenses:
-- After logging in, users can view their income and expenses, which are listed with details like amount, category, date, and comments.
+- After logging in, users can view their income and expenses, which are listed with details like amount, category, date, and comments. Application has sample data by default.
 
 ### Add/Edit/Delete Income and Expenses:
 - Users can add new income and expense entries using the provided forms.
@@ -67,8 +67,3 @@ To run this application locally, follow the steps below:
 - **React Router** for navigation.
 - **MUI UI** for website visualization and graphs.
 
-## Future Improvements
-
-- **Backend Integration**: The next step is to integrate a backend to persist data, allowing users to store their financial information across sessions.
-- **Authentication**: Implement a fully functional authentication system to manage user accounts and protect financial data.
-- **Advanced Reporting**: Add more advanced features such as monthly or yearly financial reports, budget tracking, etc.
