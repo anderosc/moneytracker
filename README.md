@@ -1,12 +1,14 @@
 
 # MoneyTracker
 
-**MoneyTracker** is a web application that allows users to manage their income and expenses, add and delete categories, and visualize data in graphical form. The app provides an easy-to-use interface for tracking financial activities over time.
+**MoneyTracker** is a front end web application that allows users to manage their income and expenses, add and delete categories, and visualize data in graphical form. The app provides an easy-to-use interface for tracking financial activities over time.
+
+![Alt text](./gif/demo.gif)
 
 LIVE DEMO --> <a href="https://moneytracker-7d066.web.app/" target="_blank">Link to demo webpage</a>
 ## Features
 
-- **Login**: Users can log in to their account and start managing their financial data.
+- **Login**: Users can log in (log in is simulated without backend) to their account and start managing their financial data.
 - **Income and Expense Management**: Users can view their income and expenses, add new entries, edit existing ones, and delete them.
 - **Category Management**: Users can add new categories for income and expenses, and also delete categories when needed.
 - **Graphical Visualization**: The application displays the data on a graph, helping users visualize their income and expenses over time.
